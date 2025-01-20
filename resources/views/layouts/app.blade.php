@@ -26,27 +26,24 @@
     </section>  
     
     <!-- Discover Section -->  
+    @php
+    use App\Models\Produk;
+
+    // Mengambil semua data produk
+    $produks = Produk::all();
+    @endphp
+
     <section class="py-12">  
         <div class="relative bg-white overflow-x-hidden">  
             <div class="container mx-auto px-4 md:px-10">  
-                <h2 class="text-2xl font-bold text-gray-800 mb-6">Discover More</h2>  
-                
+                @foreach ($produks as $produk)
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Discover More</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">  
-                    
-                    <!-- Camping Food Section -->  
-                    @php
-                        use App\Models\Produk;
 
-                        // Mengambil semua data produk
-                        $produks = Produk::all();
-                    @endphp
-
-                    @foreach ($produks as $produk)
                         <h3 class="text-lg font-bold text-[#111318] mb-4">{{ $produk->nama_produk }}</h3>  
                         <div class="flex flex-wrap gap-6">  
                             <div class="flex flex-col bg-gray-50 p-4 rounded-lg shadow">  
-                                <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl">
-                                    <img src="{{ $produk->gambar_produk }}" alt="{{ $produk->nama_produk }}"> </div>  
+                                <img src="{{ asset('storage/' . $produk->gambar_produk) }}" class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" alt="{{ $produk->nama_produk }}">  
                                 <div class="mt-2 text-left">  
                                     <p class="text-[#111318] text-base font-medium leading-normal">{{ $produk->deskripsi_produk }}</p>  
                                     <p class="text-[#636f88] text-sm font-normal leading-normal"> {{ $produk->harga_produk }}</p>  
