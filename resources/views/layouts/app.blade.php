@@ -36,49 +36,18 @@
     <section class="py-12">  
         <div class="relative bg-white overflow-x-hidden">  
             <div class="container mx-auto px-4 md:px-10">  
-                @foreach ($produks as $produk)
                 <h2 class="text-2xl font-bold text-gray-800 mb-6">Discover More</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">  
-
-                        <h3 class="text-lg font-bold text-[#111318] mb-4">{{ $produk->nama_produk }}</h3>  
-                        <div class="flex flex-wrap gap-6">  
-                            <div class="flex flex-col bg-gray-50 p-4 rounded-lg shadow">  
-                                <img src="{{ asset('storage/' . $produk->gambar_produk) }}" class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" alt="{{ $produk->nama_produk }}">  
-                                <div class="mt-2 text-left">  
-                                    <p class="text-[#111318] text-base font-medium leading-normal">{{ $produk->deskripsi_produk }}</p>  
-                                    <p class="text-[#636f88] text-sm font-normal leading-normal"> {{ $produk->harga_produk }}</p>  
-                                </div>  
-                            </div>  
+                    @foreach ($produks as $produk)
+                    <div class="flex flex-col bg-gray-50 p-4 rounded-lg shadow">  
+                        <img src="{{ asset('storage/' . $produk->gambar_produk) }}" class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" alt="{{ $produk->nama_produk }}">  
+                        <div class="mt-2 text-left">  
+                            <p class="text-[#111318] text-base font-medium leading-normal">{{ $produk->nama_produk }}</p>  
+                            <p class="text-[#636f88] text-sm font-normal leading-normal"> {{ $produk->deskripsi_produk }}</p>  
+                            <p class="text-[#636f88] text-sm font-normal leading-normal"> {{ $produk->harga_produk }}</p>  
                         </div>  
+                    </div>  
                     @endforeach
-                        <!-- Repeat other items as needed -->  
-                    </div>  
-
-                    <!-- Camping Gadgets Section -->  
-                    <h3 class="text-lg font-bold text-[#111318] mb-4">Camping Gadgets</h3>  
-                    <div class="flex flex-wrap gap-6">  
-                        <div class="flex flex-col bg-gray-50 p-4 rounded-lg shadow">  
-                            <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("https://sdxl10/72bfbd69-531d-4b2b-a563-f49e8c37f21c.png");'></div>  
-                            <div class="mt-2 text-left">  
-                                <p class="text-[#111318] text-base font-medium leading-normal">Portable Solar Charger</p>  
-                                <p class="text-[#636f88] text-sm font-normal leading-normal">$50</p>  
-                            </div>  
-                        </div>  
-                        <!-- Repeat other items as needed -->  
-                    </div>  
-
-                    <!-- Camping Gear Section -->  
-                    <h3 class="text-lg font-bold text-[#111318] mb-4">Camping Gear</h3>  
-                    <div class="flex flex-wrap gap-6">  
-                        <div class="flex flex-col bg-gray-50 p-4 rounded-lg shadow">  
-                            <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("https://sdxl10/75e59990-c44a-42a9-9b52-bd6e22f28f08.png");'></div>  
-                            <div class="mt-2 text-left">  
-                                <p class="text-[#111318] text-base font-medium leading-normal">Tents</p>  
-                                <p class="text-[#636f88] text-sm font-normal leading-normal">$100</p>  
-                            </div>  
-                        </div>  
-                        <!-- Repeat other items as needed -->  
-                    </div>  
                 </div>  
             </div>  
         </div>  

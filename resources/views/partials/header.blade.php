@@ -36,7 +36,8 @@
                 <a class="hover:text-gray-300" href="#"><i class="fab fa-facebook-f"></i></a>
                 <a class="hover:text-gray-300" href="#"><i class="fab fa-twitter"></i></a>
                 <a class="hover:text-gray-300" href="#"><i class="fab fa-google-plus-g"></i></a>
-                <a class="bg-white text-green-500 px-4 py-2 rounded hover:bg-gray-200" href="#">Sign In</a>
+                <a class="bg-white text-green-500 px-4 py-2 rounded hover:bg-gray-200" href="{{ route('login') }}">Sign In</a>
+                <a class="bg-white text-green-500 px-4 py-2 rounded hover:bg-gray-200" href="{{ route('register') }}">Sign Up</a>
             </div>
         </nav>
     </div>
