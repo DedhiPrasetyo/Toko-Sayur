@@ -2,42 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-   function tampil_register()
-   {
-       return view('pages.auth.register'); 
-   }
+    function login_function(){
+        return view('pages.auth.login');
+    }
 
-   function submit_register(Request $request)
-   {
-       $user = new User();
-       $user->name = $request->name;
-       $user->email = $request->email;
-       $user->password = bcrypt($request->password);
-       $user->save();
-   
-       return redirect()->route('login.tampil'); // Menggunakan route helper
-   }
+    function login_proses_function(Request $request){
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|password',
+        ]);
 
-   function tampil_login()
-   {
-       return view('pages.auth.login'); 
-   }
-
-   function submit_login(Request $request)
-   {
-       $data = $request->only('email', 'password');
-        
-       if (Auth::attempt($data)) {
-           $request->session()->regenerate();
-           return redirect()->route('pages.dashboard.index'); // Redirect ke dashboard
-       } else {
-           return redirect()->back()->with('gagal', 'Email atau password salah');
-       }
-   }
+    }
 }

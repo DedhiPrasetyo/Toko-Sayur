@@ -17,13 +17,12 @@
             <a class="hover:text-gray-300" href="#">Services</a>
             <a class="hover:text-gray-300" href="#">Pages</a>
             <a class="hover:text-gray-300" href="#">Contact us</a>
+            <div class="flex items-center space-x-4">
+                <a class="bg-white text-green-500 px-4 py-2 rounded hover:bg-gray-200" href="{{ route('login')}}">Sign In</a>
+                <a class="bg-white text-green-500 px-4 py-2 rounded hover:bg-gray-200" href="{{ route('register')}}">Sign Up</a>
+            </div>
         </nav>
-        <div class="hidden md:flex items-center space-x-4 md:space-x-8">
-            <a class="hover:text-gray-300" href="#"><i class="fab fa-facebook-f"></i></a>
-            <a class="hover:text-gray-300" href="#"><i class="fab fa-twitter"></i></a>
-            <a class="hover:text-gray-300" href="#"><i class="fab fa-google-plus-g"></i></a>
-            <a class="bg-white text-green-500 px-4 py-2 rounded hover:bg-gray-200" href="#">Sign In</a>
-        </div>
+       
     </div>
     <div id="mobile-menu" class="hidden md:hidden bg-green-500">
         <nav class="flex flex-col space-y-2 py-4 px-6">
@@ -33,11 +32,8 @@
             <a class="hover:text-gray-300" href="#">Pages</a>
             <a class="hover:text-gray-300" href="#">Contact us</a>
             <div class="flex items-center space-x-4 mt-4">
-                <a class="hover:text-gray-300" href="#"><i class="fab fa-facebook-f"></i></a>
-                <a class="hover:text-gray-300" href="#"><i class="fab fa-twitter"></i></a>
-                <a class="hover:text-gray-300" href="#"><i class="fab fa-google-plus-g"></i></a>
-                <a class="bg-white text-green-500 px-4 py-2 rounded hover:bg-gray-200" href="{{ route('login') }}">Sign In</a>
-                <a class="bg-white text-green-500 px-4 py-2 rounded hover:bg-gray-200" href="{{ route('register') }}">Sign Up</a>
+                <a class="bg-white text-green-500 px-4 py-2 rounded hover:bg-gray-200" href="{{ route('login')}}">Sign In</a>
+                <a class="bg-white text-green-500 px-4 py-2 rounded hover:bg-gray-200" href="{{ route('register')}}">Sign Up</a>
             </div>
         </nav>
     </div>

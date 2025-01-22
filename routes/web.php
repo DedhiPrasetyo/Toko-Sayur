@@ -9,9 +9,9 @@ Route::get('/', function () {
 });
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('pages.dashboard.index');
 
-Route::get('/register', [AuthController::class, 'tampil_register'])->name('register'); // Alias register
-Route::post('/register/submit', [AuthController::class, 'submit_register'])->name('register.submit');
+Route::get('/login', [AuthController::class, 'login_function'])->name('login');
+Route::post('/login/proses', [AuthController::class, 'login_proses_function'])->name('login.proses');
 
-
-Route::get('/login', [AuthController::class, 'tampil_login'])->name('login');
-Route::post('/login/submit', [AuthController::class, 'submit_login'])->name('login.submit');
+Route::get('/register', function () {
+    return redirect()->route('login');
+})->name('register');
